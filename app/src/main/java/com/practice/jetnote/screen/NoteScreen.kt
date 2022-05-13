@@ -17,7 +17,9 @@ import com.practice.jetnote.components.NoteButton
 import com.practice.jetnote.components.NoteInputText
 
 @Composable
-fun NoteScreen() {
+fun NoteScreen(
+    //notes: List<Note>
+) {
     var title by remember {
         mutableStateOf("")
     }
@@ -69,7 +71,13 @@ fun NoteScreen() {
 
             }
 
-            NoteButton(text = "Save", onClick = { /*TODO*/ })
+            NoteButton(text = "Save",
+                onClick = {
+                if (title.isNotEmpty() && description.isNotEmpty()) {
+                    title = ""
+                    description = ""
+                }
+            })
         }
 
     }

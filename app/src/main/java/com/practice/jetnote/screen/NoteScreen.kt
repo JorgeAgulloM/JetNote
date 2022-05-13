@@ -14,6 +14,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.practice.jetnote.R
+import com.practice.jetnote.components.NoteInputText
 
 @Composable
 fun NoteScreen() {
@@ -36,7 +37,12 @@ fun NoteScreen() {
             modifier = Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            NoteInputText(
+                text = "Hello",
+                label = "What do you doing?",
+                onTextChange = {}) {
 
+            }
         }
 
     }

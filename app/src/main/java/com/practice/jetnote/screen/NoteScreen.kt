@@ -15,10 +15,13 @@ import androidx.compose.ui.unit.dp
 import com.practice.jetnote.R
 import com.practice.jetnote.components.NoteButton
 import com.practice.jetnote.components.NoteInputText
+import com.practice.jetnote.model.Note
 
 @Composable
 fun NoteScreen(
-    //notes: List<Note>
+    notes: List<Note>,
+    onAddNote: (Note) -> Unit,
+    onRemoveNote: (Note) -> Unit
 ) {
     var title by remember {
         mutableStateOf("")
@@ -73,11 +76,11 @@ fun NoteScreen(
 
             NoteButton(text = "Save",
                 onClick = {
-                if (title.isNotEmpty() && description.isNotEmpty()) {
-                    title = ""
-                    description = ""
-                }
-            })
+                    if (title.isNotEmpty() && description.isNotEmpty()) {
+                        title = ""
+                        description = ""
+                    }
+                })
         }
 
     }
@@ -86,5 +89,8 @@ fun NoteScreen(
 @Preview(showBackground = true)
 @Composable
 fun NotesScreenPreview() {
-    NoteScreen()
+    NoteScreen(
+        notes = emptyList(),
+        onAddNote = {},
+        onRemoveNote = {})
 }

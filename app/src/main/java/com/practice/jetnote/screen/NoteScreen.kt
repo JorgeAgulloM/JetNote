@@ -142,13 +142,13 @@ fun NoteRow(
                 text = note.description,
                 style = MaterialTheme.typography.bodyLarge
             )
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+/*            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 Text(
                     text = note.entryDate.format(DateTimeFormatter
                         .ofPattern("EEE, d MMM")),
                     style = MaterialTheme.typography.titleSmall
                 )
-            }
+            }*/
         }
     }
 }

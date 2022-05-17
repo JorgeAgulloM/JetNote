@@ -19,7 +19,9 @@ import com.practice.jetnote.model.Note
 import com.practice.jetnote.screen.NoteScreen
 import com.practice.jetnote.screen.NoteViewModel
 import com.practice.jetnote.ui.theme.JetNoteTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
